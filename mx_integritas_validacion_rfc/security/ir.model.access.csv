@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_integritas_validacion_rfc,mx_integritas_validacion_rfc,model_mx_integritas_validacion_rfc_rfc,base.group_user,1,1,1,1

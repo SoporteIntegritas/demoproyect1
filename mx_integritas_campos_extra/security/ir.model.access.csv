@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mx_integritas_campos_extra_mx_integritas_campos_extra,mx_integritas_campos_extra.mx_integritas_campos_extra,model_mx_integritas_campos_extra_mx_integritas_campos_extra,,1,0,0,0

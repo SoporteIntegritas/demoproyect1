@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_location_cp" model="ir.ui.view">
+        <field name="name">res.config.company.cp</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='social_media']" position="after">
+				<group>
+					<h2>Localización Código Postal</h2>
+					<div class="  o_settings_container">
+						<div class="col-12 o_setting_box">
+							<div class=" ">
+								<label for="token_cp" class=" o_light_label"/>
+	                            <field name="token_cp"/>
+							</div>
+						</div>
+					</div>
+				</group>
+			</xpath>
+        </field>
+    </record>
+</odoo>

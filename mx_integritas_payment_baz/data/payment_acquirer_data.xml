@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="payment_acquirer_baz" model="payment.acquirer">
+            <field name="name">Banco Azteca</field>
+            <field name="image_128" type="base64" file="mx_integritas_payment_baz/static/src/img/banco_azteca_logo.jpg"/>
+            <field name="provider">baz</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="view_template_id" ref="baz_form"/>
+        </record>
+    </data>
+</odoo>

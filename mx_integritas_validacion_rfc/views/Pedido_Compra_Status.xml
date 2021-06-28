@@ -1,0 +1,24 @@
+<odoo>
+<data>
+        <record id="view_order_rfc_inherit" model="ir.ui.view">
+            <field name="name">mx.integritas.orderrfc.form.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+          <field name="mx_integritas_prioridad" string="Prioridad Lista Negra."/>
+</xpath>
+<xpath expr="//header" position="after">
+    <div class="alert alert-danger" role="alert" style="height: 40px; margin-bottom:0px;" attrs="{'invisible': [('mx_integritas_prioridad','!=','A')]}">
+        El Proveedor de este documento esta en Lista Negra. <strong></strong>.
+    </div>
+    <div class="alert alert-warning" role="alert" style="height: 40px; margin-bottom:0px;" attrs="{'invisible': [('mx_integritas_prioridad','!=','B')]}">
+        El Proveedor de este documento esta en Lista Negra como Condonado. <strong></strong>.
+    </div>
+</xpath>
+
+            </field>
+        </record>
+
+</data>
+</odoo>

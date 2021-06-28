@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_mx_integritas_crmlead_kanban_inherit" model="ir.ui.view">
+            <field name="name">mx.crm.lead.kanban.inherit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.view_crm_lead_kanban"/>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile" archivable="false">
+                    <templates>
+                        <t t-name="kanban-box">
+                        <div class="oe_kanban_content oe_kanban_global_click">    
+                            <button string="Procurement Request" name="Ir a Link" type="action"/>
+                        </div>    
+                        </t>
+                    </templates>
+                 </kanban>      
+                 
+            </field>
+        </record>
+    </data>
+</odoo>

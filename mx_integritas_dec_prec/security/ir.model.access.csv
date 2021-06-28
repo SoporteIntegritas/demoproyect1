@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mx_integritas_dec_prec_mx_integritas_dec_prec,mx_integritas_dec_prec.mx_integritas_dec_prec,model_mx_integritas_dec_prec_mx_integritas_dec_prec,,1,0,0,0

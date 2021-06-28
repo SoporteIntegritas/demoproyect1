@@ -1,0 +1,24 @@
+<odoo>
+    <template id="products_description_ec" inherit_id="website_sale.products_description" customize_show="True" name="Product Description">
+        <xpath expr="//div[hasclass('oe_subdescription')]" position="replace">
+            <div class="text-info oe_subdescription1" contenteditable="false">
+                <div itemprop="description1" t-field="product.description_sale1"></div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="product_ec" inherit_id="website_sale.product">
+        <xpath expr="//p[@t-field='product.description_sale']" position="replace">
+            <div class="o_not_editable">
+              <p t-field="product.description_sale1" class="text-muted"/>
+            </div>
+            
+        </xpath>
+        <xpath expr="//hr[@t-if='product.description_sale']" position="replace">
+            
+          <hr t-if="product.description_sale1"/>
+            
+        </xpath>
+    </template>
+    
+</odoo>

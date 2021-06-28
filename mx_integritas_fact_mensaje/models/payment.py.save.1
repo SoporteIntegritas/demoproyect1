@@ -1,0 +1,24 @@
+# coding: utf-8
+
+import datetime
+
+from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
+
+class PaymentTransaction(models.Model):
+    _inherit = "payment.transaction"
+
+    @api.multi
+    def _invoice_sale_orders(self):
+        if self.env['ir.config_parameter'].sudo().get_param('sale.automatic_invoice'):
+            for trans in self.filtered(lambda t: t.sale_order_ids):
+                try:
+			ctx_company = {'company_id': trans.acquirer_id.company_id.id,
+                               'force_company': trans.acquirer_id.company_id.id}
+                trans = trans.with_context(**ctx_company)
+                trans.sale_order_ids._force_lines_to_invoice_policy_order()
+                invoices = trans.sale_order_ids.action_invoice_create()
+                trans.invoice_ids = [(6, 0, invoices)]
+                except Exception as e:
+                    raise ValidationError("Tu pedido ya fue recibido, hubo un error de facturacion, ya no intentes pagar ya que es probable que tu pedido ya este pagado.")
+

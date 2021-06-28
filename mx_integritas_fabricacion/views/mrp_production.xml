@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_mx_integritas_fabricacion_form_inherit" model="ir.ui.view">
+            <field name="name">mx.fabricacion.form.inherit</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="arch" type="xml">     
+              <xpath expr="//field[@name='bom_id']" position="after"> 
+                <field name="mx_integritas_qtyprod"/>
+                <field name="mx_integritas_qtyporc"/>  
+            </xpath>   
+            </field>
+        </record>
+        <record id="view_mx_integritas_fabricacion_tree_inherit" model="ir.ui.view">
+            <field name="name">mx.fabricacion.tree.inherit</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_tree_view"/>
+            <field name="arch" type="xml">     
+              <xpath expr="//field[@name='product_qty']" position="after"> 
+                <field name="mx_integritas_qtyprod"/>
+                <field name="mx_integritas_qtyporc"/>  
+            </xpath>   
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,14 @@
+<odoo>
+  <data>
+    <record id="partner_form_view_wss" model="ir.ui.view">
+    <field name="name">integritas_view_wss_partner</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_form"/>
+    <field name="arch" type="xml">
+    <xpath expr="//field[@name='vat']" position="after">
+    <field name="l10n_mx_edi_usage_partner" string="Uso CFDI"/>
+    </xpath>
+    </field>
+    </record>
+  </data>
+</odoo>

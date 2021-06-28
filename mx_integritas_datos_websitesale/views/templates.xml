@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="mx_integritas_address" inherit_id="website_sale.address" priority="10">
+        <!-- Adds the interior and exterior number, changes street for street_name -->
+        <xpath expr="//div[@id='div_phone']" position="after">
+            <div t-attf-class="form-group #{error.get('l10n_mx_edi_usage_partner') and 'has-error' or ''} col-md-12 div_l10n_mx_edi_usage_partner">
+                <label class="control-label" for="l10n_mx_edi_usage_partner">Uso CFDI</label>
+                
+                <select id="l10n_mx_edi_usage_partner" name="l10n_mx_edi_usage_partner" t-attf-class="form-control">
+                <option value="">Uso CFDI...</option>
+                <option t-att-value="'G01'" t-att-selected="checkout and checkout['l10n_mx_edi_usage_partner']=='G01'">Adquisición de mercancías</option>
+                <option t-att-value="'G02'" t-att-selected="checkout and checkout['l10n_mx_edi_usage_partner']=='G02'">Devoluciones, descuentos o bonificaciones</option>
+                <option t-att-value="'G03'" t-att-selected="checkout and checkout['l10n_mx_edi_usage_partner'] == 'G03'">Gastos generales</option>
+                <option t-att-value="'I01'" t-att-selected="checkout and checkout['l10n_mx_edi_usage_partner'] == 'I01'">Construcciones</option>
+                <option t-att-value="'I02'" t-att-selected="checkout and checkout['l10n_mx_edi_usage_partner'] == 'I02'">Inversión en mobiliario y equipo de oficina</option>
+                <option t-att-value="'I03'" t-att-selected="checkout and checkout['l10n_mx_edi_usage_partner'] == 'I03'">Equipo de transporte</option>
+                <option t-att-value="'I04'" t-att-selected="checkout and checkout['l10n_mx_edi_usage_partner'] == 'I04'">Equipos y accesorios informáticos</option>
+                <option t-att-value="'I05'" t-att-selected="checkout and checkout['l10n_mx_edi_usage_partner'] == 'I05'">Dados, matrices, moldes, matrices y utillaje</option>
+                <option t-att-value="'I06'" t-att-selected="checkout and checkout['l10n_mx_edi_usage_partner'] == 'I06'">Comunicaciones telefónicas</option>
+                <option t-att-value="'I07'" t-att-selected="checkout and checkout['l10n_mx_edi_usage_partner'] == 'I07'">Comunicaciones por satélite</option>
+                <option t-att-value="'I08'" t-att-selected="checkout and checkout['l10n_mx_edi_usage_partner'] == 'I08'">Otra maquinaria y equipo</option>
+                <option t-att-value="'D01'" t-att-selected="checkout and checkout['l10n_mx_edi_usage_partner'] == 'D01'">Gastos médicos, dentales y hospitalarios</option>
+                <option t-att-value="'D02'" t-att-selected="checkout and checkout['l10n_mx_edi_usage_partner'] == 'D02'">Gastos médicos por discapacidad</option>
+                <option t-att-value="'D03'" t-att-selected="checkout and checkout['l10n_mx_edi_usage_partner'] == 'D03'">Gastos funerarios</option>
+                <option t-att-value="'D04'" t-att-selected="checkout and checkout['l10n_mx_edi_usage_partner'] == 'D04'">Donaciones</option>
+                <option t-att-value="'D05'" t-att-selected="checkout and checkout['l10n_mx_edi_usage_partner'] == 'D05'">Intereses reales efectivamente pagados por préstamos hipotecarios (casa habitación)</option>
+                <option t-att-value="'D06'" t-att-selected="checkout and checkout['l10n_mx_edi_usage_partner'] == 'D06'">Contribuciones voluntarias al SAR</option>
+                <option t-att-value="'D07'" t-att-selected="checkout and checkout['l10n_mx_edi_usage_partner'] == 'D07'">Primas de seguro médico</option>
+                <option t-att-value="'D08'" t-att-selected="checkout and checkout['l10n_mx_edi_usage_partner'] == 'D08'">Gastos obligatorios de transporte escolar</option>
+                <option t-att-value="'D09'" t-att-selected="checkout and checkout['l10n_mx_edi_usage_partner'] == 'D09'">Depósitos en cuentas de ahorro, primas basadas en planes de pensiones</option>
+                <option t-att-value="'D10'" t-att-selected="checkout and checkout['l10n_mx_edi_usage_partner'] == 'D10'">Pagos por servicios educativos (Colegiatura)</option>
+                <option t-att-value="'P01'" t-att-selected="checkout and checkout['l10n_mx_edi_usage_partner'] == 'P01'">Por definir</option>
+                 
+                     
+                </select>
+                
+                
+            </div>
+            <div class="clearfix"/>
+        </xpath>
+        
+    </template>
+    
+
+    
+</odoo>

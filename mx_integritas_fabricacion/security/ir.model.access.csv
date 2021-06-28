@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mx_integritas_fabricacion_mx_integritas_fabricacion,mx_integritas_fabricacion.mx_integritas_fabricacion,model_mx_integritas_fabricacion_mx_integritas_fabricacion,,1,0,0,0

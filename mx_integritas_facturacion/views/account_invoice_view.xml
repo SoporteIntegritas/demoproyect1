@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+     <record id="view_invoice_facturaciona_form_inherit" model="ir.ui.view">
+            <field name="name">mx.facturaciona.invoice.form.inherit</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                
+                <xpath expr="//field[@name='team_id']" position="after">
+                    <field name="l10n_mx_edi_cfdi_name" readonly="0"/>
+                </xpath>
+                <button name="action_invoice_open" position='replace'>
+                     <button name="action_invoice_open" type="object" states="draft" string="Validate" class="oe_highlight" groups="account.group_account_invoice"
+                      invisible="1"/>
+                </button>
+
+            </field>
+        </record>
+
+        <record id="view_invoice_facturacionb_form_inherit" model="ir.ui.view">
+            <field name="name">mx.facturacionb.invoice.form.inherit</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                
+                <button name="action_invoice_open" position='replace'>
+                     <button name="action_invoice_open" type="object" states="draft" string="Validate" class="oe_highlight" groups="account.group_account_invoice"
+                      invisible="1"/>
+                </button>
+
+            </field>
+        </record>
+
+
+
+
+    </data>
+</odoo>
